@@ -1,0 +1,6 @@
+{
+  "description": "Presets of evan.network digital twin templates.",
+  "license": "AGPL-3.0-only",
+  "name": "@evan.network/twin-templates",
+  "version": "1.0.0"
+}
