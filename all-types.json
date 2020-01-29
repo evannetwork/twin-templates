@@ -1,0 +1,303 @@
+{
+  "description": {
+    "author": "sample author",
+    "dbcpVersion": 2,
+    "description": "Sample Twin Template",
+    "i18n": {
+      "de": {
+        "description": "Beispiel für eine Vorlage eines Digitalen Zwillings.",
+        "name": "Beispiel Vorlage"
+      },
+      "en": {
+        "description": "Example of a template for a digital twin.",
+        "name": "Sample Twin Template"
+      }
+    },
+    "name": "sampletwin",
+    "version": "1.0.0"
+  },
+  "plugins": {
+    "pluginEntries": {
+      "description": {
+        "author": "sample author",
+        "dbcpVersion": 2,
+        "description": "plugin including all entry types",
+        "name": "pluginEntries",
+        "version": "1.0.0"
+      },
+      "template": {
+        "properties": {
+          "checkboxEntry": {
+            "dataSchema": {
+              "default": false,
+              "type": "boolean"
+            },
+            "permissions": {
+              "0": [
+                "set"
+              ]
+            },
+            "type": "entry"
+          },
+          "filesEntry": {
+            "dataSchema": {
+              "$comment": "{\"isEncryptedFile\": true}",
+              "default": {
+                "files": []
+              },
+              "properties": {
+                "additionalProperties": false,
+                "files": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "files"
+              ],
+              "type": "object"
+            },
+            "permissions": {
+              "0": [
+                "set"
+              ]
+            },
+            "type": "entry"
+          },
+          "listCheckbox": {
+            "dataSchema": {
+              "items": {
+                "default": false,
+                "type": "boolean"
+              },
+              "type": "array"
+            },
+            "permissions": {
+              "0": [
+                "set"
+              ]
+            },
+            "type": "list"
+          },
+          "numberEntry": {
+            "dataSchema": {
+              "default": 0,
+              "type": "number"
+            },
+            "permissions": {
+              "0": [
+                "set"
+              ]
+            },
+            "type": "entry"
+          },
+          "objectEntry": {
+            "dataSchema": {
+              "properties": {
+                "checkboxField": {
+                  "default": false,
+                  "type": "boolean"
+                },
+                "filesField": {
+                  "$comment": "{\"isEncryptedFile\": true}",
+                  "default": {
+                    "files": []
+                  },
+                  "properties": {
+                    "additionalProperties": false,
+                    "files": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "files"
+                  ],
+                  "type": "object"
+                },
+                "numberField": {
+                  "default": 0,
+                  "type": "number"
+                },
+                "objectField": {
+                  "additionalProperties": true,
+                  "default": {},
+                  "type": "object"
+                },
+                "textField": {
+                  "default": "",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "permissions": {
+              "0": [
+                "set"
+              ]
+            },
+            "type": "entry"
+          },
+          "textEntry": {
+            "dataSchema": {
+              "default": "",
+              "type": "string"
+            },
+            "permissions": {
+              "0": [
+                "set"
+              ]
+            },
+            "type": "entry"
+          }
+        },
+        "type": "entry"
+      }
+    },
+    "pluginLists": {
+      "description": {
+        "author": "sample author",
+        "dbcpVersion": 2,
+        "description": "plugin including all listentries types",
+        "name": "pluginLists",
+        "version": "1.0.0"
+      },
+      "template": {
+        "properties": {
+          "listCheckbox": {
+            "dataSchema": {
+              "items": {
+                "default": false,
+                "type": "boolean"
+              },
+              "type": "array"
+            },
+            "permissions": {
+              "0": [
+                "set"
+              ]
+            },
+            "type": "list"
+          },
+          "listFiles": {
+            "dataSchema": {
+              "items": {
+                "$comment": "{\"isEncryptedFile\": true}",
+                "default": {
+                  "files": []
+                },
+                "properties": {
+                  "additionalProperties": false,
+                  "files": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "files"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "permissions": {
+              "0": [
+                "set"
+              ]
+            },
+            "type": "list"
+          },
+          "listNumber": {
+            "dataSchema": {
+              "items": {
+                "default": 0,
+                "type": "number"
+              },
+              "type": "array"
+            },
+            "permissions": {
+              "0": [
+                "set"
+              ]
+            },
+            "type": "list"
+          },
+          "listObject": {
+            "dataSchema": {
+              "items": {
+                "properties": {
+                  "fieldCheckbox": {
+                    "default": false,
+                    "type": "boolean"
+                  },
+                  "fieldFiles": {
+                    "$comment": "{\"isEncryptedFile\": true}",
+                    "default": {
+                      "files": []
+                    },
+                    "properties": {
+                      "additionalProperties": false,
+                      "files": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      }
+                    },
+                    "required": [
+                      "files"
+                    ],
+                    "type": "object"
+                  },
+                  "fieldNumber": {
+                    "default": 0,
+                    "type": "number"
+                  },
+                  "fieldObject": {
+                    "additionalProperties": true,
+                    "default": {},
+                    "type": "object"
+                  },
+                  "fieldText": {
+                    "$comment": "{\"isEncryptedFile\": true}",
+                    "default": {
+                      "files": []
+                    },
+                    "properties": {
+                      "additionalProperties": false,
+                      "files": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      }
+                    },
+                    "required": [
+                      "files"
+                    ],
+                    "type": "object"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "permissions": {
+              "0": [
+                "set"
+              ]
+            },
+            "type": "list"
+          }
+        },
+        "type": "entry"
+      }
+    }
+  }
+}
