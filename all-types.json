@@ -66,21 +66,6 @@
             },
             "type": "entry"
           },
-          "listCheckbox": {
-            "dataSchema": {
-              "items": {
-                "default": false,
-                "type": "boolean"
-              },
-              "type": "array"
-            },
-            "permissions": {
-              "0": [
-                "set"
-              ]
-            },
-            "type": "list"
-          },
           "numberEntry": {
             "dataSchema": {
               "default": 0,
@@ -145,6 +130,144 @@
           "textEntry": {
             "dataSchema": {
               "default": "",
+              "type": "string"
+            },
+            "permissions": {
+              "0": [
+                "set"
+              ]
+            },
+            "type": "entry"
+          }
+        },
+        "type": "entry"
+      }
+    },
+    "pluginEntriesValidation": {
+      "description": {
+        "author": "sample author",
+        "dbcpVersion": 2,
+        "description": "plugin including all entry types with validation flags",
+        "name": "pluginEntriesValidation",
+        "version": "1.0.0"
+      },
+      "template": {
+        "properties": {
+          "booleanEntry": {
+            "dataSchema": {
+              "default": false,
+              "type": "boolean"
+            },
+            "permissions": {
+              "0": [
+                "set"
+              ]
+            },
+            "type": "list"
+          },
+          "filesEntry": {
+            "dataSchema": {
+              "$comment": "{\"isEncryptedFile\": true}",
+              "default": {
+                "files": []
+              },
+              "maxItems": 5,
+              "minItems": 1,
+              "properties": {
+                "additionalProperties": false,
+                "files": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "files"
+              ],
+              "type": "object"
+            },
+            "permissions": {
+              "0": [
+                "set"
+              ]
+            },
+            "type": "entry"
+          },
+          "numberEntry": {
+            "dataSchema": {
+              "default": 0,
+              "maximum": 123,
+              "minimum": 1,
+              "type": "number"
+            },
+            "permissions": {
+              "0": [
+                "set"
+              ]
+            },
+            "type": "entry"
+          },
+          "objectEntry": {
+            "dataSchema": {
+              "properties": {
+                "checkboxField": {
+                  "default": false,
+                  "type": "boolean"
+                },
+                "filesField": {
+                  "$comment": "{\"isEncryptedFile\": true}",
+                  "default": {
+                    "files": []
+                  },
+                  "maxItems": 5,
+                  "minItems": 1,
+                  "properties": {
+                    "additionalProperties": false,
+                    "files": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "files"
+                  ],
+                  "type": "object"
+                },
+                "numberField": {
+                  "default": 0,
+                  "maximum": 123,
+                  "minimum": 1,
+                  "type": "number"
+                },
+                "objectField": {
+                  "additionalProperties": true,
+                  "default": {},
+                  "type": "object"
+                },
+                "textField": {
+                  "default": "",
+                  "maxLength": 20,
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "permissions": {
+              "0": [
+                "set"
+              ]
+            },
+            "type": "entry"
+          },
+          "textEntry": {
+            "dataSchema": {
+              "default": "",
+              "maxLength": 20,
+              "minLength": 1,
               "type": "string"
             },
             "permissions": {
@@ -265,10 +388,128 @@
                     "type": "object"
                   },
                   "fieldText": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "permissions": {
+              "0": [
+                "set"
+              ]
+            },
+            "type": "list"
+          },
+          "listText": {
+            "dataSchema": {
+              "items": {
+                "default": 0,
+                "type": "text"
+              },
+              "type": "array"
+            },
+            "permissions": {
+              "0": [
+                "set"
+              ]
+            },
+            "type": "list"
+          }
+        },
+        "type": "entry"
+      }
+    },
+    "pluginListsValidation": {
+      "description": {
+        "author": "sample author",
+        "dbcpVersion": 2,
+        "description": "plugin including all listentries types with validation flags",
+        "name": "pluginListsValidation",
+        "version": "1.0.0"
+      },
+      "template": {
+        "properties": {
+          "listCheckbox": {
+            "dataSchema": {
+              "items": {
+                "default": false,
+                "type": "boolean"
+              },
+              "type": "array"
+            },
+            "permissions": {
+              "0": [
+                "set"
+              ]
+            },
+            "type": "list"
+          },
+          "listFiles": {
+            "dataSchema": {
+              "items": {
+                "$comment": "{\"isEncryptedFile\": true}",
+                "default": {
+                  "files": []
+                },
+                "maxItems": 5,
+                "minItems": 1,
+                "properties": {
+                  "additionalProperties": false,
+                  "files": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "files"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "permissions": {
+              "0": [
+                "set"
+              ]
+            },
+            "type": "list"
+          },
+          "listNumber": {
+            "dataSchema": {
+              "items": {
+                "default": 0,
+                "maxLength": 20,
+                "minLength": 1,
+                "type": "text"
+              },
+              "type": "array"
+            },
+            "permissions": {
+              "0": [
+                "set"
+              ]
+            },
+            "type": "list"
+          },
+          "listObject": {
+            "dataSchema": {
+              "items": {
+                "properties": {
+                  "fieldCheckbox": {
+                    "default": false,
+                    "type": "boolean"
+                  },
+                  "fieldFiles": {
                     "$comment": "{\"isEncryptedFile\": true}",
                     "default": {
                       "files": []
                     },
+                    "maxItems": 5,
+                    "minItems": 1,
                     "properties": {
                       "additionalProperties": false,
                       "files": {
@@ -282,6 +523,22 @@
                       "files"
                     ],
                     "type": "object"
+                  },
+                  "fieldNumber": {
+                    "default": 0,
+                    "maximum": 123,
+                    "minimum": 1,
+                    "type": "number"
+                  },
+                  "fieldObject": {
+                    "additionalProperties": true,
+                    "default": {},
+                    "type": "object"
+                  },
+                  "fieldText": {
+                    "maxLength": 20,
+                    "minLength": 1,
+                    "type": "string"
                   }
                 },
                 "type": "object"
