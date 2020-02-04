@@ -140,7 +140,7 @@
             "type": "entry"
           }
         },
-        "type": "entry"
+        "type": "default"
       }
     },
     "pluginEntriesValidation": {
@@ -211,6 +211,29 @@
           "objectEntry": {
             "dataSchema": {
               "properties": {
+                "arrayField": {
+                  "additionalProperties": false,
+                  "default": {},
+                  "items": {
+                    "properties": {
+                      "bar": {
+                        "type": "number"
+                      },
+                      "foo": {
+                        "type": "string"
+                      },
+                      "minMax": {
+                        "maxLength": 10,
+                        "minLength": 1,
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "maxItems": 5,
+                  "minItems": 1,
+                  "type": "array"
+                },
                 "checkboxField": {
                   "default": false,
                   "type": "boolean"
@@ -243,8 +266,24 @@
                   "type": "number"
                 },
                 "objectField": {
-                  "additionalProperties": true,
+                  "additionalProperties": false,
                   "default": {},
+                  "properties": {
+                    "bar": {
+                      "type": "number"
+                    },
+                    "foo": {
+                      "type": "string"
+                    },
+                    "minMax": {
+                      "maxLength": 10,
+                      "minLength": 1,
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "bar"
+                  ],
                   "type": "object"
                 },
                 "textField": {
@@ -278,7 +317,7 @@
             "type": "entry"
           }
         },
-        "type": "entry"
+        "type": "default"
       }
     },
     "pluginLists": {
@@ -355,6 +394,22 @@
             "dataSchema": {
               "items": {
                 "properties": {
+                  "arrayField": {
+                    "additionalProperties": true,
+                    "default": {},
+                    "items": {
+                      "properties": {
+                        "bar": {
+                          "type": "number"
+                        },
+                        "foo": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
                   "fieldCheckbox": {
                     "default": false,
                     "type": "boolean"
@@ -382,13 +437,17 @@
                     "default": 0,
                     "type": "number"
                   },
-                  "fieldObject": {
-                    "additionalProperties": true,
-                    "default": {},
-                    "type": "object"
-                  },
                   "fieldText": {
                     "type": "string"
+                  },
+                  "objectField": {
+                    "additionalProperties": true,
+                    "default": {},
+                    "properties": {},
+                    "required": [
+                      "foo"
+                    ],
+                    "type": "object"
                   }
                 },
                 "type": "object"
@@ -406,7 +465,7 @@
             "dataSchema": {
               "items": {
                 "default": 0,
-                "type": "text"
+                "type": "string"
               },
               "type": "array"
             },
@@ -418,7 +477,7 @@
             "type": "list"
           }
         },
-        "type": "entry"
+        "type": "default"
       }
     },
     "pluginListsValidation": {
@@ -484,7 +543,7 @@
                 "default": 0,
                 "maxLength": 20,
                 "minLength": 1,
-                "type": "text"
+                "type": "number"
               },
               "type": "array"
             },
@@ -499,6 +558,29 @@
             "dataSchema": {
               "items": {
                 "properties": {
+                  "arrayField": {
+                    "additionalProperties": false,
+                    "default": {},
+                    "items": {
+                      "properties": {
+                        "bar": {
+                          "type": "number"
+                        },
+                        "foo": {
+                          "type": "string"
+                        },
+                        "minMax": {
+                          "maxLength": 10,
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "maxItems": 5,
+                    "minItems": 1,
+                    "type": "array"
+                  },
                   "fieldCheckbox": {
                     "default": false,
                     "type": "boolean"
@@ -530,15 +612,31 @@
                     "minimum": 1,
                     "type": "number"
                   },
-                  "fieldObject": {
-                    "additionalProperties": true,
-                    "default": {},
-                    "type": "object"
-                  },
                   "fieldText": {
                     "maxLength": 20,
                     "minLength": 1,
                     "type": "string"
+                  },
+                  "objectField": {
+                    "additionalProperties": false,
+                    "default": {},
+                    "properties": {
+                      "bar": {
+                        "type": "number"
+                      },
+                      "foo": {
+                        "type": "string"
+                      },
+                      "minMax": {
+                        "maxLength": 10,
+                        "minLength": 1,
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "bar"
+                    ],
+                    "type": "object"
                   }
                 },
                 "type": "object"
@@ -553,7 +651,7 @@
             "type": "list"
           }
         },
-        "type": "entry"
+        "type": "default"
       }
     }
   }
